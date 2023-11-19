@@ -16,13 +16,13 @@ The motion of the rocket is governed by the following equations:
    ![equation](https://latex.codecogs.com/png.latex?a_r%20%3D%20%5Cfrac%7Bm_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20V_e%20&plus;%20%28p_e%20-%20p_%7B%5Cinfty%7D%29%20%5Ccdot%20A_e%20-%20%28m_0%20-%20m_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20%5CDelta%20t%29%20%5Ccdot%20g%7D%7Bm_0%20-%20m_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20%5CDelta%20t%7D)
 
    Where:
-   - `m_{\dot{p}}` is the mass flow rate of the propellant.
+   - `m_dot_p` is the mass flow rate of the propellant.
    - `V_e` is the exit velocity at the nozzle.
-   - `p_e` and `p_{\infty}` are the exit and ambient pressures, respectively.
+   - `p_e` and `p_inf` are the exit and ambient pressures, respectively.
    - `A_e` is the exit area of the nozzle.
    - `m_0` is the initial mass of the rocket.
    - `g` is the acceleration due to gravity.
-   - `\Delta t` is the time step.
+   - `delta_t` is the time step.
 
 ### Constraints
 
