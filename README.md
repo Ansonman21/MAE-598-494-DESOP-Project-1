@@ -2,18 +2,18 @@
 
 In this project, we formulated an optimization problem centered around the controlled descent of a rocket, with the dual objectives of ensuring a safe landing and minimizing fuel consumption. The problem is defined within a one-dimensional space, focusing on the vertical motion of the rocket. Key variables in this formulation include the rocket's vertical position and velocity, and the control variable is the mass flow rate of the propellant. The dynamics of the rocket are governed by Newton's laws, factoring in gravitational forces, the thrust generated, and the changing mass due to fuel consumption. Constraints are imposed to ensure physical realism, such as non-negative height and bounded mass flow rate, alongside velocity constraints to prevent crashing or overshooting. The problem is simplified by assuming instantaneous adjustability of thrust and neglecting external factors like air resistance. This formulation encapsulates the complexities of rocket descent dynamics while focusing on the critical aspects of landing safety and fuel efficiency.
 
-**Dynamic Equations**
+### Dynamic Equations
 
 The motion of the rocket is governed by the following equations:
 
 1. **Vertical Position** (`y`):
-   $$ y_{new} = y + v_y \cdot \Delta t + \frac{1}{2} a_r \cdot \Delta t^2 $$
+   ![equation](https://latex.codecogs.com/png.latex?y_%7Bnew%7D%20%3D%20y%20&plus;%20v_y%20%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7D%20a_r%20%5Ccdot%20%5CDelta%20t%5E2)
 
 2. **Vertical Velocity** (`v_y`):
-   $$ v_{y_{new}} = v_y + a_r \cdot \Delta t $$
+   ![equation](https://latex.codecogs.com/png.latex?v_%7By_%7Bnew%7D%7D%20%3D%20v_y%20&plus;%20a_r%20%5Ccdot%20%5CDelta%20t)
 
 3. **Acceleration** (`a_r`):
-   $$ a_r = \frac{m_{\dot{p}} \cdot V_e + (p_e - p_{\infty}) \cdot A_e - (m_0 - m_{\dot{p}} \cdot \Delta t) \cdot g}{m_0 - m_{\dot{p}} \cdot \Delta t} $$
+   ![equation](https://latex.codecogs.com/png.latex?a_r%20%3D%20%5Cfrac%7Bm_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20V_e%20&plus;%20%28p_e%20-%20p_%7B%5Cinfty%7D%29%20%5Ccdot%20A_e%20-%20%28m_0%20-%20m_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20%5CDelta%20t%29%20%5Ccdot%20g%7D%7Bm_0%20-%20m_%7B%5Cdot%7Bp%7D%7D%20%5Ccdot%20%5CDelta%20t%7D)
 
    Where:
    - `m_{\dot{p}}` is the mass flow rate of the propellant.
@@ -24,19 +24,19 @@ The motion of the rocket is governed by the following equations:
    - `g` is the acceleration due to gravity.
    - `\Delta t` is the time step.
 
-**Constraints**
+### Constraints
 
 1. **Non-negative Height**:
-   $$ y \geq 0 $$
+   ![equation](https://latex.codecogs.com/png.latex?y%20%5Cgeq%200)
 
 2. **Bounded Mass Flow Rate**:
-   $$ 0 \leq m_{\dot{p}} \leq m_{\dot{p}_{max}} $$
+   ![equation](https://latex.codecogs.com/png.latex?0%20%5Cleq%20m_%7B%5Cdot%7Bp%7D%7D%20%5Cleq%20m_%7B%5Cdot%7Bp%7D_%7Bmax%7D%7D)
 
 3. **Velocity Constraints**:
-   - To prevent crashing: $$ v_y \geq v_{y_{min}} $$
-   - To prevent overshooting: $$ v_y \leq v_{y_{max}} $$
+   - To prevent crashing: ![equation](https://latex.codecogs.com/png.latex?v_y%20%5Cgeq%20v_%7By_%7Bmin%7D%7D)
+   - To prevent overshooting: ![equation](https://latex.codecogs.com/png.latex?v_y%20%5Cleq%20v_%7By_%7Bmax%7D%7D)
 
-**Assumptions**
+### Assumptions
 
 1. The motion of the rocket is restricted to vertical movement only.
 2. The thrust can be adjusted instantaneously.
@@ -46,7 +46,7 @@ The motion of the rocket is governed by the following equations:
 
 These equations, constraints, and assumptions form the basis of the problem formulation, capturing the essential physics of the rocket's descent while simplifying the model to focus on the primary objectives of safe landing and fuel efficiency.
 
-**1. Documentation of the Problem Formulation**
+### 1. Documentation of the Problem Formulation
 
   Objective Function:
       
@@ -68,11 +68,11 @@ These equations, constraints, and assumptions form the basis of the problem form
   Air resistance and other environmental factors are neglected.
   The rocket's thrust is assumed to be adjustable instantaneously according to the control variable.
 
-**2. Programming**
+### 2. Programming
 
   Please see attached python script.
 
-**3. Analysis of the Results**
+### 3. Analysis of the Results
 
   Issues Encountered:
       
@@ -86,7 +86,7 @@ These equations, constraints, and assumptions form the basis of the problem form
   The sensitivity of optimization algorithms to hyperparameters, necessitating careful tuning.
   The need for rigorous testing and validation of each component of the model to ensure realistic behavior.
 
-**4. Visualization**
+### 4. Visualization
 
   Final Results Visualization:
       
