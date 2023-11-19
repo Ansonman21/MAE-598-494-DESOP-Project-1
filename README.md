@@ -2,6 +2,50 @@
 
 In this project, we formulated an optimization problem centered around the controlled descent of a rocket, with the dual objectives of ensuring a safe landing and minimizing fuel consumption. The problem is defined within a one-dimensional space, focusing on the vertical motion of the rocket. Key variables in this formulation include the rocket's vertical position and velocity, and the control variable is the mass flow rate of the propellant. The dynamics of the rocket are governed by Newton's laws, factoring in gravitational forces, the thrust generated, and the changing mass due to fuel consumption. Constraints are imposed to ensure physical realism, such as non-negative height and bounded mass flow rate, alongside velocity constraints to prevent crashing or overshooting. The problem is simplified by assuming instantaneous adjustability of thrust and neglecting external factors like air resistance. This formulation encapsulates the complexities of rocket descent dynamics while focusing on the critical aspects of landing safety and fuel efficiency.
 
+**Dynamic Equations**
+
+The motion of the rocket is governed by the following equations:
+
+1. **Vertical Position** (`y`):
+   $$ y_{new} = y + v_y \cdot \Delta t + \frac{1}{2} a_r \cdot \Delta t^2 $$
+
+2. **Vertical Velocity** (`v_y`):
+   $$ v_{y_{new}} = v_y + a_r \cdot \Delta t $$
+
+3. **Acceleration** (`a_r`):
+   $$ a_r = \frac{m_{\dot{p}} \cdot V_e + (p_e - p_{\infty}) \cdot A_e - (m_0 - m_{\dot{p}} \cdot \Delta t) \cdot g}{m_0 - m_{\dot{p}} \cdot \Delta t} $$
+
+   Where:
+   - `m_{\dot{p}}` is the mass flow rate of the propellant.
+   - `V_e` is the exit velocity at the nozzle.
+   - `p_e` and `p_{\infty}` are the exit and ambient pressures, respectively.
+   - `A_e` is the exit area of the nozzle.
+   - `m_0` is the initial mass of the rocket.
+   - `g` is the acceleration due to gravity.
+   - `\Delta t` is the time step.
+
+**Constraints**
+
+1. **Non-negative Height**:
+   $$ y \geq 0 $$
+
+2. **Bounded Mass Flow Rate**:
+   $$ 0 \leq m_{\dot{p}} \leq m_{\dot{p}_{max}} $$
+
+3. **Velocity Constraints**:
+   - To prevent crashing: $$ v_y \geq v_{y_{min}} $$
+   - To prevent overshooting: $$ v_y \leq v_{y_{max}} $$
+
+**Assumptions**
+
+1. The motion of the rocket is restricted to vertical movement only.
+2. The thrust can be adjusted instantaneously.
+3. External factors like air resistance are neglected.
+4. The gravitational force is considered constant.
+5. The rocket's structure is rigid, and its shape does not change during descent.
+
+These equations, constraints, and assumptions form the basis of the problem formulation, capturing the essential physics of the rocket's descent while simplifying the model to focus on the primary objectives of safe landing and fuel efficiency.
+
 **1. Documentation of the Problem Formulation**
 
   Objective Function:
