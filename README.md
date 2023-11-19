@@ -76,9 +76,12 @@ These equations, constraints, and assumptions form the basis of the problem form
 
   Issues Encountered:
       
-  Incorrect Problem Formulations: Initially, the model did not account for the changing mass of the rocket due to fuel consumption, leading to unrealistic behavior. This was corrected by incorporating the mass flow rate into the dynamics.
-  Hyperparameter Tuning: Finding the right balance for the learning rate and the number of epochs in the optimization algorithm was challenging. Too high a learning rate caused instability, while too low a rate resulted in slow convergence.
-  Coding Issues: Ensuring that tensor operations in PyTorch were performed correctly, especially avoiding in-place operations that could interfere with gradient calculations, was crucial. Debugging these issues required careful examination of tensor shapes and operations.
+  Incorrect Problem Formulations:
+     Initially, the model did not account for the changing mass of the rocket due to fuel consumption, leading to unrealistic behavior. This was corrected by incorporating the mass flow rate into the dynamics.
+  Hyperparameter Tuning:
+     Finding the right balance for the learning rate and the number of epochs in the optimization algorithm was challenging. Too high a learning rate caused instability, while too low a rate resulted in slow convergence.
+  Coding Issues:
+     Ensuring that tensor operations in PyTorch were performed correctly, especially avoiding in-place operations that could interfere with gradient calculations, was crucial. Debugging these issues required careful examination of tensor shapes and operations.
   
   Lessons Learned:
       
@@ -93,6 +96,8 @@ These equations, constraints, and assumptions form the basis of the problem form
   A GIF animation was created to visually represent the rocket's descent and landing. This animation shows the rocket's height, velocity, and thrust over time, providing an intuitive understanding of the descent dynamics.
   Additional plots were generated to illustrate the trajectory of the rocket in terms of height, velocity, acceleration, fuel consumption, and mass flow rate over time. These plots offer a detailed view of the rocket's behavior during descent and the effectiveness of the control strategy.
   The visualization effectively communicates the outcome of the optimization, demonstrating a successful controlled descent and landing.
+
+  **For plots of height, velocity, acceleration, fuel consumption, and current mass flow rate for each epoch, please run code (there are many graphs).**
   
   Effectiveness:
       
